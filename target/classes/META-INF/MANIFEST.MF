@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: SpringBootJQueryAjaxClient
+Implementation-Version: 0.0.1
+Built-By: lenovo
+Implementation-Vendor-Id: com.javasampleapproach.jqueryajax
+Build-Jdk: 1.8.0_161
+Implementation-URL: http://projects.spring.io/spring-boot/SpringBootJQ
+ ueryAjaxClient/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
