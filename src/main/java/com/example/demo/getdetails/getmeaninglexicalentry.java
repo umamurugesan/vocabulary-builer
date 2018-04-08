@@ -16,6 +16,7 @@ public class getmeaninglexicalentry {
 	public ResponseString getmean(List<LexicalEntry> le)
 	{
 		List<String> st=new ArrayList<>();
+		
 		ResponseString res=new ResponseString();
 		for (LexicalEntry lexicalEntry : le) {
 		  
@@ -26,8 +27,12 @@ public class getmeaninglexicalentry {
 			if(entry!=null)
 			{
 		 getentrydetails g=new getentrydetails();
+		 
 		 if(g!=null)
+		 {
+			
 		res= g.getentry(entry);
+		 }
 		}}}
 		res.setLexical(st);
 		return res;

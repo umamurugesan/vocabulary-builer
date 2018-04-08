@@ -6,16 +6,16 @@ import com.example.jsonformat.*;
 import com.javasampleapproach.jqueryajax.message.ResponseString;
 
 public class getexampledetails{
-	public ResponseString getexample(Example_ ex)
+	public List<String> getexample(Example_ ex)
 	{
 	 ResponseString res=new ResponseString();
 		List<String> register=ex.getRegisters();
 		printstringdetails p=new printstringdetails();
 		p.printstring(register);
-		res.setRegister(register);
+	//	res.setRegister(register);
 	//	 System.setOut(ps);
 		System.out.println(ex.getText());
-		return res;
+		return register;
 	}
 
 }

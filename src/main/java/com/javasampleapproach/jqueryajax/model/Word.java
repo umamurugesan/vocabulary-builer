@@ -2,14 +2,11 @@ package com.javasampleapproach.jqueryajax.model;
 
 public class Word {
     private String word;
-    private String URL;
+    private String meaning;
      
     public Word(){}
      
-    public Word(String firstname, String lastname){
-        this.word = firstname;
-        this.URL = lastname;
-    }
+   
      
     // firstname
     public String getword() {
@@ -18,12 +15,27 @@ public class Word {
     public void setFirstname(String firstname) {
         this.word = firstname;
     }
+
+
+
+	public String getMeaning() {
+		return meaning;
+	}
+
+
+
+	public void setMeaning(String meaning) {
+		this.meaning = meaning;
+	}
+
+
+
+	public Word(String word, String meaning) {
+		super();
+		this.word = word;
+		this.meaning = meaning;
+	}
      
     // lastname
-    public String getURL() {
-        return URL;
-    }
-    public void setURL(String URL) {
-        this.URL = URL;
-    }
+
 }

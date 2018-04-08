@@ -79,6 +79,7 @@ public class DictioanryJDBCtemplate extends DictionaryDAO {
 		// TODO Auto-generated method stub
 		
 		 String SQL = "insert into wordlist (userid, wordname,URL) values (?, ?,?)";
+		 System.out.println(URL);
 	jdbcTemplateObject.update(SQL, Userid,word,URL);
 	      
 	   

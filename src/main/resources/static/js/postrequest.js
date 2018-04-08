@@ -13,9 +13,9 @@ $( document ).ready(function() {
     	// PREPARE FORM DATA
     	var formData = {
     		firstname : $("#firstname").val(),
-    		meaning :  $("#URL").val()
+    		URL :  $("#URL").val()
     	}
-    	
+    	console.log(formData)
     	// DO POST
     	$.ajax({
 			type : "POST",
@@ -24,11 +24,22 @@ $( document ).ready(function() {
 			data : JSON.stringify(formData),
 			dataType : 'json',
 			success : function(result) {
-				if(result.status == "Done"){
-					$("#postResultDiv").html("<p style='background-color:#7FA7B0; color:white; padding:20px 20px 20px 20px'>" +												
-												result.data );
-				}else{
-					$("#postResultDiv").html("<strong>Error</strong>");
+				if(result.status == 'present'){
+					$("#postResultDiv").html("<p style='background-color:#7FA7B0; color:white; padding:20px 20px 20px 20px'>" + 
+												"Post Successfully! <br>" +												 
+												result.data);
+				}
+				else if(result.status == 'wrong'){
+					$("#postResultDiv").html("<p style='background-color:#7FA7B0; color:white; padding:20px 20px 20px 20px'>" + 
+												"Post Successfully! <br>" +
+												"---> Customer's Info: FirstName = " + 
+												result.data);
+				}
+				
+				
+				
+				else{
+					$("#postResultDiv").html("<strong>Error</strong>"+result.status);
 				}
 				console.log(result);
 			},
@@ -45,6 +56,6 @@ $( document ).ready(function() {
     
     function resetData(){
     	$("#firstname").val("");
-    	$("#lastname").val("");
+    	$("#URL").val("");
     }
 })

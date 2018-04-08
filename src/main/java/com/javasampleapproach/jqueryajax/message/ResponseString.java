@@ -8,6 +8,13 @@ import com.example.jsonformat.LexicalEntry;
 
 public class ResponseString {
 	
+	@Override
+	public String toString() {
+		return "ResponseString [type=" + type + ", lexical=" + lexical + ", Definiton=" + Definiton + ", Domain="
+				+ Domain + ", Definiton1=" + Definiton1 + ", Domain1=" + Domain1 + ", Register1=" + Register1
+				+ ", text=" + text + ", Register=" + Register + "]";
+	}
+
 	List<String> type;
 	 
 	 List<String> lexical;

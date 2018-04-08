@@ -24,6 +24,7 @@ public class maincomparison {
 			DictioanryJDBCtemplate djdbc=new DictioanryJDBCtemplate();
 			djdbc.createDictioanryJDBCtemplate();
 			words=djdbc.listofword();
+			String URL=null;
 			Response res1=null;
 		if(words!=null)
 		{
@@ -31,6 +32,7 @@ public class maincomparison {
 				if(wodlist.getWordname().equals(id))
 				{
 					flag=true;
+					URL=wodlist.getURL();
 				
 		
 				}
@@ -40,17 +42,18 @@ public class maincomparison {
 				
 			{
 				
-				djdbc.create(id,wo.getURL(), "uma");
+				//djdbc.create(id,wo.getURL(), "uma");
 				res1=new Response();
 				return res1;
 			}
 			else
 			{
 				System.out.println("already present");
-				String URL=wo.getURL();
+				
+				System.out.println();
 				if(URL==null)
 					URL="URL unkonwn";
-				 res1=new Response("already known word",wo.getURL());
+				 res1=new Response("already known word",URL);
 				return res1;
 			}
 		
@@ -61,6 +64,19 @@ public class maincomparison {
 			
 		}
 		return null;
+	}
+	
+	public void store(Word wo)
+	{
+		DictioanryJDBCtemplate djdbc=new DictioanryJDBCtemplate();
+		try {
+			djdbc.createDictioanryJDBCtemplate();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		djdbc.create(wo.getword(),wo.getMeaning(), "uma");
 	}
 
 	

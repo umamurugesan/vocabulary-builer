@@ -9,6 +9,7 @@ public class getsensedetails {
 	
 	public ResponseString getsense(Sense se)
 	{
+	 List<String> examp=se.getDefinitions();
 	 List<String> def=se.getDefinitions();
 	 //to print definition
 //	 System.setOut(ps);
@@ -16,20 +17,21 @@ public class getsensedetails {
 	 System.out.println("definition:");
 	 printstringdetails pt=new printstringdetails();
 	 pt.printstring(def);
-	 res.setDefiniton(def);
+//	 res.setDefiniton(def);
 	 //to print domain
 	 List<String> dom=se.getDomains();
 	// System.setOut(ps);
 	 System.out.println("Domain");
 	 pt.printstring(dom);
-	 res.setDomain(dom);
+	// res.setDomain(dom);
 	 List<Example_> ex=se.getExamples();
 	 if(ex!=null)
 	 {
 	 for (Example_ example_ : ex) {
 		getexampledetails ge=new getexampledetails();
-		res=ge.getexample(example_);
+		examp.addAll(ge.getexample(example_));
 	}}
+	 res.setRegister(examp);
 	 List<Subsense> sub=se.getSubsenses();
 	 if(sub!=null)
 	 {
